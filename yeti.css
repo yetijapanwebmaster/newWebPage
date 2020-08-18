@@ -49,13 +49,14 @@ body{
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 16px;
   text-decoration: none;
 }
 
 #homelink {
   font-weight: bold;
   float: left;
+  padding: 14px 16px;
 }
 
 .nav a:hover {
@@ -102,7 +103,19 @@ body{
   }
 
   .hamburger{
-    display: inline-block;
-    text-align: right;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+  }
+
+  .nav a:not(:first-child) {display: none;}
+  .nav.dropdown {position: relative;}
+
+  .nav.dropdown a:not(:first-child) {
+    float: center;
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }
