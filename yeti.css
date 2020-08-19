@@ -46,7 +46,7 @@ h3{
 
 
 .nav a{
-  float: right;
+  float: left;
   display: block;
   color: white;
   text-align: center;
@@ -149,6 +149,50 @@ padding: 100px;
   padding: 0px;
 }
 
+.about img {
+  margin: 0;
+  padding: 0;
+  width:100%;
+}
+
+
+#eventskitrip{
+  background-image: url('img/eventskitrip.jpg');
+}
+
+#eventhalloween{
+  background-image: url('img/eventhalloween.jpg');
+}
+
+.events-yr{
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  padding:0;
+  margin-bottom: 20px;
+}
+.events-yr h3{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color:white;
+
+}
+
+.events-yr div{
+  position: absolute;
+  bottom: 0;
+  background-color: #7791B9;
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+}
+
+.events-yr:hover > div{
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
@@ -229,6 +273,6 @@ padding: 100px;
     .col-12 {width: 100%;}
 
     .coverphoto{
-      height: 400px; 
+      height: 400px;
     }
 }
