@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YETI - Yamanashi English Teachers International</title>
+    <link rel="stylesheet" href="yeti.css" >
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="topnav" class="nav">
+      <a id="homelink" href="index.html"><span class="material-icons">filter_hdr</span> YETI</a>
+      <div class="hamburger" onclick="myFunction(this);">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <!-- Navbar links -->
+      <!-- Current page denoted by 'active' class -->
+      <a href="index.html">Home</a>
+      <a href="#" class="active">About</a>
+      <a href="events.html">Events</a>
+      <a href="#">Yamanashi</a>
+      <a href="blog/index.php">News</a>
+    </div>
+
+    <div class="container col-12">
+      <div class="about col-12 col-m-12">
+
+        <h2>About Yeti</h2>
+        <p>YETI, as an organisation aims to help the foreign community living here in Yamanashi. We are made up of mainly teachers and we exist to provide a social network for you to tap into. We are also here to aid with anything you need help with before, during and after your stay in Yamanashi.</p>
+
+        <p>We organise events year-round from parties, pub quizzes and ski trips through to rambles in our glorious countryside. They are a great opportunity to meet and make friends with both old and new faces. We also provide a monthly newsletter which you will receive from our Secretary, Kaitlyn.</p>
+
+        <p>Finally, you can become a YETI member for 3,000 yen a year. It is optional and you can still attend events without a membership. However, it does entitle you to discounts at events and will more than pay for itself it you attend a few. You also get a cool card! We hope that you enjoy what YETI offers you and hopefully we will see you at all of our events!</p>
+        <a href="https://www.facebook.com/groups/yamanashiyeti/"><button class="fb-btn col-8">Find us on Facebook!</button></a>
+      </div>
+
+      <div class="meetcouncil col-12 col-m-12">
+        <h2>Meet your Council!</h2>
+        
+        <div class="council">
+          <img src="img/president.jpg">
+        </div>
+        <h3>President:</h3>
+        <h4>Lauren Nicole</h4>
+        
+        <div class="council">
+          <img src="img/secretary.jpg">
+        </div>
+        <h3>Secretary:</h3>
+        <h4>Kaitlyn Smith</h4>
+        
+        <div class="council">
+          <img src="img/treasurer.jpg">
+        </div>
+        <h3>Treasurer</h3>
+        <h4>Vivian Lee</h4>
+
+        <div class="council">
+          <img src="img/outreach.jpg">
+        </div>
+        <h3>Outreach</h3>
+        <h4>KristenMack</h4>
+
+        <div class="council">
+          <img src="img/firstyear.jpg">
+        </div>
+        <h3>First Year Rep</h3>
+        <h4>Leslie Crafton</h4>
+        
+        <div class="council">
+          <img src="img/webmaster.jpg">
+        </div>
+        <h3>Webmaster</h3>
+        <h4>Matthew Houston</h4>
+      </div>
+
+
+    </div>
+
+
+
+
+    <script>
+        function myFunction(x) {
+          x.classList.toggle("change");
+
+          var x = document.getElementById("topnav");
+          if (x.className === "nav") {
+            x.className += " dropdown";
+          } else {
+            x.className = "nav";
+          }
+        }
+    </script>
+  </body>
+</html>
