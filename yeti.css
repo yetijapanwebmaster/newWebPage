@@ -19,6 +19,11 @@ h3{
   font-size 1em;
 }
 
+a{
+  text-decoration: none;
+  text-align: center;
+}
+
 
 .row::after {
   content: "";
@@ -192,6 +197,75 @@ padding: 100px;
 
 .events-yr:hover > div{
   display: none;
+}
+
+/*
+YAMANASHI MAP STYLES*/
+
+#map_container {
+width: 100%;
+float: left;
+margin: 5px;
+}
+
+#mapbottom {
+/*overflow: auto;*/
+background-color: #FFFFFF;
+}
+
+#mapcontent {
+width: 100%;
+height: 200px;
+float: left;
+margin: 5px;
+font-size: 1em;
+line-height: 1.5;
+letter-spacing: 0.09em;
+color: #000000;
+text-align: justify;
+}
+
+#mapwrap {
+max-width: 100%;
+/*margin: 0px auto;*/
+/*overflow: auto;*/
+}
+/*
+#placename {
+height: 80px;
+width: 200px;
+position: relative;
+bottom: 100px;
+left: 170px;
+}
+
+#placename p {
+line-height: 1.5em;
+font-size: 1.6em;
+text-align: center;
+} */
+
+#preload {
+display: none;
+}
+
+#yetimap{
+  border: none;
+}
+
+#map_container img{
+  border: none;
+  padding: none;
+}
+
+#explore{
+  position: relative;
+}
+
+#placeName {
+  position: absolute;
+  bottom: 5%;
+  right: 30%;
 }
 
 @media only screen and (max-width: 768px) {

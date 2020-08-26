@@ -29,34 +29,9 @@
 
     <div class="events col-12">
         <h2>Upcoming Events</h2>
-        <div class="events-sm col-12">
-          <!-- <div class="eventpic col-m-5"> -->
-          <!-- </div> -->
-          <img class="col-5 col-m-5" src=""></img>
-          <div class="col-m-7">
-            <h3></h3>
-            <h4></h4>
-          </div>
+        <div id="eventCal">
         </div>
-        <div class="events-sm col-12">
-          <!-- <div class="eventpic col-m-5"> -->
-          <!-- </div> -->
-          <img class="col-5 col-m-5" src=""></img>
-          <div class="col-m-7">
-            <h3></h3>
-            <h4></h4>
-          </div>
-        </div>
-        <div class="events-sm col-12">
-          <!-- <div class="eventpic col-m-5"> -->
-          <!-- </div> -->
-          <img class="col-5 col-m-5" src=""></img>
-          <div class="col-m-7">
-            <h3></h3>
-            <h4></h4>
-          </div>
-        </div>
-        <!-- <a href="https://www.facebook.com/groups/yamanashiyeti/"><button class="fb-btn col-8">Find out more on Facebook!</button></a> -->
+        <!-- <a href="https://www.facebook.com/groups/yamanashiyeti/"><button class="fb-btn col-8">Find out more on Facebook!</button></a>-->
 
         <h2>Seasonal Events:</h2>
         <a href="https://www.google.com">
@@ -128,18 +103,40 @@
               var i;
 
               if(data != -1){
-                fbEvents = document.getElementsByClassName('events-sm');
+                var fbEvents = document.getElementById('eventCal');
+                // fbEvents = document.getElementsByClassName('events-sm');
                 for(i=0;i<data.length;i++){
-                  if(i<3){
-                    fbEvents[i].children[0].src = data[i].cover.source;
-                    fbEvents[i].children[1].children[0].innerText = data[i].name;
-                    fbEvents[i].children[1].children[1].innerText = formatDate(data[i].start_time,data[i].end_time);
-                  }
+
+                  //  Creates Div to hold Event information
+                  var eventSm = document.createElement('DIV');
+                  eventSm.className = "events-sm col-12";
+
+                  var eventSmImg = document.createElement('IMG');
+                  eventSmImg.className = "col-5 col-m-5";
+                  eventSmImg.src = data[i].cover.source;
+                  eventSm.appendChild(eventSmImg);
+
+
+                  //Create Text Div
+                  var eventSmText = document.createElement('DIV');
+                  eventSmText.className = "col-m-7";
+
+                  var eventSmName = document.createElement('H3');
+                  eventSmName.innerText = data[i].name;
+                  eventSmText.appendChild(eventSmName);
+
+                  var eventSmDate = document.createElement('H4');
+                  //Fetches Formatted Date Value
+                  eventSmDate.innerText = formatDate(data[i].start_time,data[i].end_time);
+                  eventSmText.appendChild(eventSmDate);
+
+                  eventSm.appendChild(eventSmText);
+                  fbEvents.appendChild(eventSm);
                 }
               }
             };
 
-            // Formats Date and Time. In the case of matching Dates for the startTime and endTime the endTime date is left off.
+            // Formats Date and Time. In the case of matching Dates for the startTime and endTime the endTime date is dropped
 
             function formatDate(startTime, endTime){
               var start = startTime.split(/\T|\+/);
@@ -147,10 +144,10 @@
               var formattedDate;
               if(start[0] === end[0])
                 {
-                  formattedDate = parseDate(start[0]) + ' @ ' + start[1].substr(0,5) + '~' + end[1].substr(0,5);
+                  formattedDate = parseDate(start[0]) + ' @ ' + start[1].substr(0,5) + ' - ' + end[1].substr(0,5);
                 }
               else{
-                formattedDate = parseDate(start[0]) + ' @ ' + start[1].substr(0,5) + '~' + parseDate(end[0]) + end[1].substr(0,5);
+                formattedDate = parseDate(start[0]) + ' @ ' + start[1].substr(0,5) + ' - ' + parseDate(end[0]) + ' @ ' + end[1].substr(0,5);
               }
               return formattedDate;
             };
