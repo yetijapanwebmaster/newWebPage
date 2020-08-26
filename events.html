@@ -20,10 +20,10 @@
       <!-- Navbar links -->
       <!-- Current page denoted by 'active' class -->
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="#" class="active">Events</a>
-      <a href="#">Yamanashi</a>
       <a href="blog/">News</a>
+      <a href="#">Yamanashi</a>
+      <a href="about.html">About</a>
       <a href="#">FAQ</a>
     </div>
 
@@ -32,23 +32,33 @@
         <div class="events-sm col-12">
           <!-- <div class="eventpic col-m-5"> -->
           <!-- </div> -->
-          <img class="col-5 col-m-5" src="img/event1.jpg"></img>
+          <img class="col-5 col-m-5" src=""></img>
           <div class="col-m-7">
-            <h3>Movie Night</h3>
-            <h4>January 1, 2021 @ 3:00pm</h4>
+            <h3></h3>
+            <h4></h4>
           </div>
         </div>
         <div class="events-sm col-12">
           <!-- <div class="eventpic col-m-5"> -->
           <!-- </div> -->
-          <img class="col-5 col-m-5" src="img/event2.jpg"></img>
+          <img class="col-5 col-m-5" src=""></img>
           <div class="col-m-7">
-            <h3>Outdoor BBQ</h3>
-            <h4>January 10, 2021 @ 2:00pm</h4>
+            <h3></h3>
+            <h4></h4>
           </div>
         </div>
+        <div class="events-sm col-12">
+          <!-- <div class="eventpic col-m-5"> -->
+          <!-- </div> -->
+          <img class="col-5 col-m-5" src=""></img>
+          <div class="col-m-7">
+            <h3></h3>
+            <h4></h4>
+          </div>
+        </div>
+        <!-- <a href="https://www.facebook.com/groups/yamanashiyeti/"><button class="fb-btn col-8">Find out more on Facebook!</button></a> -->
 
-        <h2>Yearly Events:</h2>
+        <h2>Seasonal Events:</h2>
         <a href="https://www.google.com">
           <div id="eventskitrip" class="events-yr col-12">
             <h3>YETI Ski Trip</h3>
@@ -78,5 +88,124 @@
           }
         }
     </script>
+
+    <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId            : '352438862789553',
+              autoLogAppEvents : true,
+              xfbml            : true,
+              version          : 'v8.0'
+            });
+
+            FB.getLoginStatus(function(response) {
+              if (response.status === 'connected') {
+                var accessToken = response.authResponse.accessToken;
+                FB.api(
+                    "/1253304111694340/events",
+                    "GET",
+                    {"fields":"name,start_time,end_time,cover"},
+                    function (response) {
+                      if (response && !response.error) {
+                        console.log(JSON.stringify(response));
+                        setEvents(response.data);
+                        // console.log(search(respons.data,''));
+                      }
+                      else{
+                        console.log('Not Replying:');
+                        console.log(JSON.stringify(response));
+                      }
+                    }
+                  );
+              }
+            } );
+            };
+
+            //Uses event data and inputs into 'event-sm' class. Sets the picture, Event name, and also the Date and time of the event
+
+            function setEvents(data){
+              var results = [];
+              var i;
+
+              if(data != -1){
+                fbEvents = document.getElementsByClassName('events-sm');
+                for(i=0;i<data.length;i++){
+                  if(i<3){
+                    fbEvents[i].children[0].src = data[i].cover.source;
+                    fbEvents[i].children[1].children[0].innerText = data[i].name;
+                    fbEvents[i].children[1].children[1].innerText = formatDate(data[i].start_time,data[i].end_time);
+                  }
+                }
+              }
+            };
+
+            // Formats Date and Time. In the case of matching Dates for the startTime and endTime the endTime date is left off.
+
+            function formatDate(startTime, endTime){
+              var start = startTime.split(/\T|\+/);
+              var end = endTime.split(/\T|\+/);
+              var formattedDate;
+              if(start[0] === end[0])
+                {
+                  formattedDate = parseDate(start[0]) + ' @ ' + start[1].substr(0,5) + '~' + end[1].substr(0,5);
+                }
+              else{
+                formattedDate = parseDate(start[0]) + ' @ ' + start[1].substr(0,5) + '~' + parseDate(end[0]) + end[1].substr(0,5);
+              }
+              return formattedDate;
+            };
+
+            //Takes date in YY-MM-DD format and parses into english readable format ex. 'January 10, 1995.'
+            function parseDate(date){
+              tmpDate = date.split('-');
+              switch(tmpDate[1]){
+                case '01':
+                  tmpDate[1] = 'January';
+                break;
+                case '02':
+                  tmpDate[1] = 'February';
+                break;
+                case '03':
+                  tmpDate[1] = 'March';
+                break;
+                case '04':
+                  tmpDate[1] = 'April';
+                break;
+                case '05':
+                  tmpDate[1] = 'May';
+                break;
+                case '06':
+                  tmpDate[1] = 'June';
+                break;
+                case '07':
+                  tmpDate[1] = 'July';
+                break;
+                case '08':
+                  tmpDate[1] = 'August';
+                break;
+                case '09':
+                  tmpDate[1] = 'September';
+                break;
+                case '10':
+                  tmpDate[1] = 'October';
+                break;
+                case '11':
+                  tmpDate[1] = 'November';
+                break;
+                case '12':
+                  tmpDate[1] = 'December';
+                break;
+              }
+              return tmpDate[1] + ' ' + tmpDate[2] + ', ' + tmpDate[0];
+
+            };
+
+
+
+        </script>
+
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
   </body>
 </html>
