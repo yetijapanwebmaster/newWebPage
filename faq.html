@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YETI - Yamanashi English Teachers International</title>
+    <link rel="stylesheet" href="yeti.css" >
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+    function toggleMessage(x){
+      var dots = document.getElementsByClassName('dots');
+      var message = document.getElementsByClassName('more');
+      var btn = document.getElementsByClassName('btn')[x-1];
+
+      if(dots[x-1].style.display == 'none'){
+        dots[x-1].style.display = "inline";
+        message[x-1].style.display = "none";
+        btn[x-1].innerHTML = "Read more"
+      }
+      else {
+        dots[x-1].style.display = "none";
+        message[x-1].style.display = "inline";
+        btn[x-1].innerHTML = "Read Less";
+      }
+
+    };
+
+    </script>
+
+
+
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="topnav" class="nav">
+      <a id="homelink" href="index.html"><span class="material-icons">filter_hdr</span> YETI</a>
+      <div class="hamburger" onclick="myFunction(this);">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <!-- Navbar links -->
+      <!-- Current page denoted by 'active' class -->
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="blog/">News</a>
+      <a href="yamanashi.html">Yamanashi</a>
+      <a href="about.html">About</a>
+      <a href="#" class="active">FAQ</a>
+    </div>
+
+    <div class="container col-m-10 col-8">
+      <h2>FAQ's</h2>
+      <div class="row">
+        <h3 id="yamanashi">Where is Yamanashi?</h3>
+        <p>Home of the best side of Mt. Fuji, Yamanashi is a beautiful prefecture located to the west of Tokyo by about 2 hours. You can reach the prefecture either by train, car, or from one of the many buses that pass through.
+          Its most well known sites include Mt. Fuji and its five lakes, as well as the Minami-Alps and the large city of Kofu. The prefecture is surrounded by mountains so most of the population lives within the Kofu basin.
+          In the past, Yamanashi was known for its impenetrable strongholds and strong military. In recent years, people have come to know it for its grapes and wine as well as its peaches and various site seeing spots.
+          Yamanashi is also well known for it’s koseki jewelry and inden, deer leather work. It does get cold here in the winter so don't forget to warm up with some warm Hotou soup.</p>
+      </div>
+
+
+      <div class="row">
+        <h3 id="license">How do I get a driver's license?</h3>
+        <p>The YETI council and friends have created a driving guide for obtaining your first Japanese license as well as some terms that you might find helpful. Feel free to download and use as needed from the link below</p>
+        <ul >
+            <li style="list-style-type: circle">Yamanashi Driving Guide (2020)   <span><a class="dl-btn" href="files/Yamanashi Driving Guide 2020.pdf" download>Download</a></span></li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <h3 id="taxes">Tax Questions</h3>
+        <br>
+        <table>
+          <tr>
+            <th>Country</th>
+            <th>Information</th>
+          </tr>
+          <tr>
+            <td>United States of America</td>
+            <td>We recommend checking out the <a style="text-decoration: underline" href="https://kumamotojet.com/reiwa/u-s-tax-guide/">Kumamoto JET</a> Website for Tax questions. They upload a detailed Tax Guide for each year. If you've forgotten to pay your taxes the last couple years or weren't sure how to do it, it isn't too late to go ahead and submit your tax returns. Just fill out the forms and send them in as soon as possible.</td>
+          </tr>
+          <tr>
+
+          </tr>
+        </table
+
+        <p>*If you have any good links or suggestions for the Tax Guide please let the Yeti Webmaster know so we can add it!</p>
+      </div>
+
+
+      <div class="row">
+        <h3 id="school">School Life</h3>
+          <ul >
+            <li>Elementary School</li>
+            <li>Junior High School</li>
+            <li>Senior High School</li>
+          </ul>
+      </div>
+
+      <div class="row">
+        <h3 id="sites">What should I wear?</h3>
+      </div>
+
+    </div>
+
+    <script>
+        function myFunction(x) {
+          x.classList.toggle("change");
+
+          var x = document.getElementById("topnav");
+          if (x.className === "nav") {
+            x.className += " dropdown";
+          } else {
+            x.className = "nav";
+          }
+        }
+    </script>
+  </body>
+</html>

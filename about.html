@@ -7,7 +7,26 @@
     <link rel="stylesheet" href="yeti.css" >
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+    function toggleMessage(x){
+      var dots = document.getElementsByClassName('dots');
+      var message = document.getElementsByClassName('more');
+      var btn = document.getElementsByClassName('btn')[x-1];
 
+      if(dots[x-1].style.display == 'none'){
+        dots[x-1].style.display = "inline";
+        message[x-1].style.display = "none";
+        btn[x-1].innerHTML = "Read more"
+      }
+      else {
+        dots[x-1].style.display = "none";
+        message[x-1].style.display = "inline";
+        btn[x-1].innerHTML = "Read Less";
+      }
+
+    };
+
+    </script>
 
 
 
@@ -24,69 +43,139 @@
       <!-- Navbar links -->
       <!-- Current page denoted by 'active' class -->
       <a href="index.html">Home</a>
-      <a href="#" class="active">About</a>
       <a href="events.html">Events</a>
-      <a href="#">Yamanashi</a>
       <a href="blog/">News</a>
-      <a href="#">FAQ</a>
+      <a href="yamanashi.html">Yamanashi</a>
+      <a href="#" class="active">About</a>
+      <a href="faq.html">FAQ</a>
     </div>
 
-    <div class="container col-12">
-      <div class="about col-12 col-m-12">
-        <img src="img/about1.jpg" alt="Do you wanna build a snowman?">
+    <div class="container col-m-10 col-8">
+
+
+      <div class="about col-6 col-m-12">
+
+        <!-- <img src="img/about3.jpg" alt="Ski Trip 2020"> -->
+        <!-- <img src="img/about2.jpg" alt="A Very YETI Halloween"> -->
         <h2>About Yeti</h2>
-        <p>YETI, as an organisation aims to help the foreign community living here in Yamanashi. We are made up of mainly teachers and we exist to provide a social network for you to tap into. We are also here to aid with anything you need help with before, during and after your stay in Yamanashi.</p>
+        <p style="text-align:justify">YETI, as an organisation aims to help the foreign community living here in Yamanashi. We are made up of mainly teachers and we exist to provide a social network for you to tap into. We are also here to aid with anything you need help with before, during and after your stay in Yamanashi.</p>
 
-        <img src="img/about3.jpg" alt="Ski Trip 2020">
-        <p>We organise events year-round from parties, pub quizzes and ski trips through to rambles in our glorious countryside. They are a great opportunity to meet and make friends with both old and new faces. We also provide a monthly newsletter which you will receive from our Secretary, Kaitlyn.</p>
 
-        <img src="img/about2.jpg" alt="A Very YETI Halloween">
-        <p>Finally, you can become a YETI member for 3,000 yen a year. It is optional and you can still attend events without a membership. However, it does entitle you to discounts at events and will more than pay for itself it you attend a few. You also get a cool card! We hope that you enjoy what YETI offers you and hopefully we will see you at all of our events!</p>
-        <a href="https://www.facebook.com/groups/yamanashiyeti/"><button class="fb-btn col-8">Find us on Facebook!</button></a>
+        <p style="text-align:justify">We organise events year-round from parties, pub quizzes and ski trips through to rambles in our glorious countryside. They are a great opportunity to meet and make friends with both old and new faces. We also provide a monthly newsletter which you will receive from our Secretary, Kaitlyn.</p>
+
+
+        <p style="text-align:justify">Finally, you can become a YETI member for 3,000 yen a year. It is optional and you can still attend events without a membership. However, it does entitle you to discounts at events and will dots than pay for itself it you attend a few. You also get a cool card! We hope that you enjoy what YETI offers you and hopefully we will see you at all of our events!</p>
+
+      </div>
+      <img class="col-6" style="margin-top:90px;" src="img/Yeti_Undokai.jpg">
+
+      <div class="col-12">
+      <a href="https://www.facebook.com/groups/yamanashiyeti/"><button class="fb-btn col-6">Find us on Facebook!</button></a>
       </div>
 
       <div class="meetcouncil col-12 col-m-12">
         <h2>Meet your Council!</h2>
 
-        <div class="council">
-          <img src="img/president.jpg">
+        <div class="row">
+          <div class="col-6">
+            <div class="council">
+              <img src="img/president.jpg">
+            </div>
+          </div>
+          <div class="col-6 council-message">
+          <h3>President:</h3>
+          <h4>Lauren Nicole</h4>
+          <p style="text-align:justify;">Hey, hi, hello! My name is Lauren. Your snazzy, dazzle-y, most definitely human, shiny new President of YETI! Originally from the US of A, specifically North Carol<span class="dots">...</span><span class="more">ina, I came to Yamanashi straight out of undergrad in 2016. I majored in Global Studies and Japanese at UNC Chapel Hill, and with the power of God and Anime on my side I got my JLPT N1 certification in the summer of 2018. I am *REDACTED* years of age and boy golly, does time fly. Unlike me. I cannot fly. No siree. My hobbies are hiking, rock-climbing, jogging, hot spring connoisseur-ing, and basically anything else that gets me outdoors! I look forward to standing on things that are not meant to be stood on and making important announcements to all of you, as well as getting to know you and your earth-customs, which are also my own customs because I am also a human. Let’s have a great year of YETI fun, and continue to make this community one of the best communities in Japan! :D</span>
+          </p>
+          <button class="btn" onclick="toggleMessage(1)">Read More</button>
+          </div>
         </div>
-        <h3>President:</h3>
-        <h4>Lauren Nicole</h4>
 
-        <div class="council">
-          <img src="img/secretary.jpg">
-        </div>
-        <h3>Secretary:</h3>
-        <h4>Kaitlyn Smith</h4>
+        <div class="row">
+          <div class="col-6">
+            <div class="council">
+              <img src="img/secretary.jpg">
+            </div>
+          </div>
 
-        <div class="council">
-          <img src="img/treasurer.jpg">
+          <div class="col-6 council-message">
+          <h3>Secretary:</h3>
+          <h4>Kaitlyn Smith</h4>
+          <p style="text-align:justify;">Hey guys! My name is Kaitlyn and I’m originally from the great land of Wisconsin, but I’ve been living in Yamanashi for 4 years now. This year I’ll be transitioning from yeti outreach to secretary. I’ll be helping our fearless leader Lauren do council stuff, and I’ll also be making a Yeti Corner which will discuss local places, restaurants and events in Yamanashi. I want<span class="dots">...</span><span class="more"> people to enjoy Yamanashi and learn about all the best places...including the best cake shops. Yum! Looking forward to growing our community this year and connecting with everyone.</span>
+          </p>
+          <button class="btn" onclick="toggleMessage(2)">Read More</button>
         </div>
-        <h3>Treasurer</h3>
-        <h4>Vivian Lee</h4>
+        </div>
 
-        <div class="council">
-          <img src="img/outreach.jpg">
+        <div class="row">
+          <div class="col-m-12 col-6">
+            <div class="council">
+              <img src="img/treasurer.jpg">
+            </div>
+          </div>
+          <div class="col-6 council-message">
+            <h3>Treasurer</h3>
+            <h4>Vivian Lee</h4>
+            <p style="text-align:justify;">Hi, I’m Vivian Lee. I’m 25 years old. I like people... places... and things.</p>
+          </div>
         </div>
-        <h3>Outreach</h3>
-        <h4>KristenMack</h4>
 
+        <div class="row">
+        <div class="col-m-12 col-6">
         <div class="council">
-          <img src="img/firstyear.jpg">
+            <img src="img/outreach.jpg">
+          </div>
         </div>
-        <h3>First Year Rep</h3>
-        <h4>Leslie Crafton</h4>
+          <div class="col-m-12 col-6 council-message">
+            <h3>Outreach</h3>
+            <h4>Kristen Mack</h4>
+            <p style="text-align:justify;">Hello! My name is Kristen Mack and I am your friendly neighborhood Outreach Person/Thingy! I’m the person that you’ll probably see posting a lot on the YETI Facebook group. I’m 24 years old and I am<span class="dots">...</span><span class="more"> from Pennsylvania, America. I like to meet new people and make friends but I’m very awkward :D I love to travel and try new things. I eventually want to go backpacking around many countries and travel across the U.S. in a van with my future van cat. I like memes, so please feel free to send me memes or pictures of cute animals. I also like to read, sing karaoke, play Super Smash Brothers, and watch Netflix/Youtube. I’m a pretty chill girl that’s down for anything. Let’s be friends!</span>
+            </p>
+          <button class="btn" onclick="toggleMessage(3)">Read More</button>
+          </div>
+        </div>
 
-        <div class="council">
-          <img src="img/webmaster.jpg">
+
+        <div class="row">
+          <div class="col-m-12 col-6">
+            <div class="council">
+              <img src="img/firstyear.jpg">
+            </div>
+          </div>
+        <div class="col-m-12 col-6 council-message">
+          <h3>First Year Rep</h3>
+          <h4>Leslie Crafton</h4>
+          <p style="text-align:justify;">
+          Hello! Leslie hails from the Southern United States, she travels eagerly and consumes beer regularly. Always seeking a good conversation and a new place to find cheese dogs.
+
+Hobbies include sleeping, dog loving, plant collecting (hoarding?), falling down staircases<span class="dots">...</span><span class="more">, sandwich crafting, playing video games until 2am, and trying to get anyone to talk to me about Lord of the Rings.
+
+As first year rep (spy), I’m here for you to question and whine too. I encourage any comments, suggestions, pleas, conversations about Lord of the Rings, or concerns thrown my way and I’ll relay it to the YETI council I’ve infiltrated for the 2019-20 year. I love my Yamanashi community and want to help make everyone’s time here the best it can be. Message me on Facebook anytime, email me, or find me in person. I always have time for you.</span>
+            </p>
+          <button class="btn" onclick="toggleMessage(4)">Read More</button>
+          </div>
         </div>
-        <h3>Webmaster</h3>
-        <h4>Matthew Houston</h4>
+
+
+        <div class="row">
+          <div class="col-m-12 col-6">
+          <div class="council">
+            <img src="img/webmaster.jpg">
+          </div>
+          </div>
+
+          <div class="col-m-12 col-6 council-message">
+          <h3>Webmaster</h3>
+          <h4>Matthew Houston</h4>
+          <p style="text-align:justify;">Alright, people. Let’s start at the beginning one last time. My name is Matthew Houston. I was bitten by a radioactive spider, And for the last 2 years, I've been the one and only Spider-Man.
+
+You guys know the rest. I came to Japan, found the greatest dog and tried to find the best grade A Ramen Japan had to offer. So now I help everyone else, and build websites<span class="dots">...</span><span class="more">, handle accounts and stuff. Just livin’ the best life I can.
+
+And one day this weird thing happened. and I mean, like, really weird. I landed a spot on the YETI council. My Spider-Sense told me to give it a try so here I am now as your friendly new neighborhood WEBmaster. As for my sidekick, Nobunaga, have I mentioned he’s the greatest?</span></p>
+</p>
+        <button class="btn" onclick="toggleMessage(5)">Read More</button>
+        </div>
       </div>
-
-
-    </div>
 
 
 
