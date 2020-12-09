@@ -56,11 +56,14 @@ a{
 }
 
 .btn{
-  background-color: Tan;
+  background-color: #5e61d1;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
+}
+.btn:hover{
+  background-color: #9295ff;
 }
 
 .row{
@@ -71,6 +74,9 @@ a{
   content: "";
   clear: both;
   display: table;
+}
+.information{
+  margin: 10px 16.67%;
 }
 
 [class*="col-"] {
@@ -317,6 +323,10 @@ padding: 180px;
     width: 100%;
     text-align: center;
   }
+  .information{
+    margin: 0;
+  }
+
 }
 
 .more {

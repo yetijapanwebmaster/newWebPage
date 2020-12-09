@@ -156,4 +156,5 @@ function loadPlace(nameEn,nameJp){
   document.getElementById('blurbImage').src = "img/coverphoto.jpg";
   document.getElementById('blurb-text').innerText = "Hokuto is a city located in the north-western portion of Yamanashi Prefecture, Japan. The town is made up of 8 ‘towns’ or subdivisions; Hakushu, Nakasaka, Suta-ma, Takane, Akeno, Mukawa, Oizumi, and Kobuchisawa (where our elementary school is located). These towns merged in 2004 to make the city of Hokuto as we know it today. For the most part you can think of them as similar to areas such as Benbrook, Haltom City, and Forest Hill in Fort Worth.";
   document.getElementById("area-blurb").style.display = 'inline-block';
+  document.getElementById("welcome-subtext").style.display = 'none';
 }
